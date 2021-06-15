@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+{% load static %}
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+
+
+<div style="background: url({% static 'images/COVID-19.jpg' %});padding-top: 5px" width=100% height=100%>
+	<form action="{% url 'register' %}" method="POST">
+		{% csrf_token %}
+		<h1><center style='color:white;text-align:center'>REGISTRATION FORM</center></h1><br><br>
+		<center>
+			
+			<form>
+			<h4 style="color:white">Name:</h4 ><input  type="text" name="name" required><br><br><br><br>
+			<h4 style="color:white">Age:</h4><input type="integer" name="age" required><br><br><br><br>
+			
+			
+			<h4 style="color:white">Email:</h4><input type="email" name="email" required><br><br><br><br>
+			<h4 style="color:white">Phone:</h4><input type="integer" name="phone" required><br><br><br><br>
+			<input type="submit" name="submit" value='register'><br><br>
+			</form>
+		</center> 
+	</form>
+</div>
+
+{% endblock %}

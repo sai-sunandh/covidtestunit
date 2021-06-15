@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>
+		{% block title %}
+      COVID TEST
+    {% endblock %}
+	</title>
+
+</head>
+{% load static %}
+<body>
+
+<nav class="navbar navbar-inverse" style="background-color:black;">
+  <div class="container-fluid">
+    <div class="navbar-header active">
+      
+      <a class="navbar-brand active" style="color:white" href="{% url 'covid'%}">COVID TESTING UNIT</a>
+     
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">check<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'register' %}">covid</a></li>
+          
+       </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Covid Measures<span class="caret"></span></a>
+
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'precautions'%}">Precautions</a></li>
+       
+        
+          <li><a href="{% url 'symptoms' %}">symptoms</a></li>
+        </ul>
+        <li ><a href="{% url 'owner' %}"><b>OWNER</b></a></li>
+      </li>
+    </ul>
+  </div>
+  {% block body %}
+  {% endblock %}
+
+</nav>
+ 
+</body>
+</html>
